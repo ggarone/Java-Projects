@@ -29,6 +29,22 @@ public class Articolo implements Comparable<Articolo>{
 	public void setQuantita(int quantita) {
 		this.quantita = quantita;
 	}
+	
+	public void incrementa(int q) {
+		q = Math.abs(q);
+		this.quantita += q;
+	}
+	
+	public boolean decrementa(int q) {
+		q = Math.abs(q);
+		if(this.quantita >= q) {
+			this.quantita -= q;
+			return true;
+		}else {
+			System.out.println("operazione non disponibile per insufficienza di pezzi");
+			return false;
+		}
+	}
 
 	public int getId() {
 		return id;

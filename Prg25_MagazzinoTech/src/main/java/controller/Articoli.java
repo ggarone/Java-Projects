@@ -39,8 +39,16 @@ public class Articoli {
 		this.articoliMap.put(a.getId(), a);
 	}
 	
-	private Articolo getArticolo(int id) {
+	public Articolo getArticolo(int id) {
 		return this.articoliMap.get(id);
+	}
+	
+	public void caricaArticolo(Articolo a, int q) {
+		getArticolo(a.getId()).incrementa(q);
+	}
+	
+	public boolean scaricaArticolo(Articolo a, int q) {
+		return getArticolo(a.getId()).decrementa(q);
 	}
 	
 	

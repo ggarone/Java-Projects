@@ -10,9 +10,9 @@ public class Movimento {
 	
 	public Movimento(String descrizione, int quantita, Articolo articolo) {
 		super();
+		this.dataMovimento = LocalDate.now();
 		this.descrizione = descrizione;
 		this.quantita = quantita;
-		this.dataMovimento = LocalDate.now();
 		this.articolo = articolo;
 	}
 	

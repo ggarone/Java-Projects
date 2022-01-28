@@ -7,8 +7,14 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
+<style type="text/css">
+.numero {
+	text-align: right;
+}
+</style>
 </head>
 <body>
+<%@ include file="menu.jsp" %>
 	<h1>Movimenti</h1>
 	
 	<form method="post" action="movimenti">
@@ -25,10 +31,10 @@
 	
 	<table>
 		<tr>
-			<th>Descrizione</th>
-			<th>Quantita'</th>
 			<th>dataMovimento</th>
-			<th>Nome Articolo</th>
+			<th>Articolo</th>
+			<th>Descrizione</th>
+			<th class="numero">Quantita'</th>
 		</tr>
 	
 	<%
@@ -36,10 +42,10 @@
 	
 		for(Movimento m : movimenti){%>
 			<tr>
-				<td><%=m.getDescrizione()%></td>
-				<td><%=m.getQuantita()%></td>
 				<td><%=m.getDataMovimento()%></td>
 				<td><%=m.getArticolo().getDescrizione()%></td>
+				<td><%=m.getDescrizione()%></td>
+				<td class="numero"><%=m.getQuantita()%></td>
 			</tr>
 	<%} %>
 	

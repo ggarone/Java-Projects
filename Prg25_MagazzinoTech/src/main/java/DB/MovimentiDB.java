@@ -23,4 +23,5 @@ public class MovimentiDB {
 			ArticoliDB.getAll().get(m.getArticolo().getId()).setQuantita(m.getQuantita());;	
 		}
 	}
+	
 }

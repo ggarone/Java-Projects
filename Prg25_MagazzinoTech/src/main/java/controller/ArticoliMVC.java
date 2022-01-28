@@ -12,19 +12,15 @@ import java.io.IOException;
 @WebServlet("/articoli")
 public class ArticoliMVC extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private Articoli articoli;
+    private MagazzinoCtrl ctrl;
 
     public ArticoliMVC() {
         super();
-        this.articoli = new Articoli();
-        for (Articolo  a : DB.ArticoliDB.getAll().values()) {
-        	this.articoli.addArticolo(a);
-		}
-       
+        this.ctrl = new MagazzinoCtrl();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("articoli", articoli.getArticoliList());
+		request.setAttribute("articoli", ctrl.getCtrlArticoli().getArticoliList());
 		request.getRequestDispatcher("elenco.jsp").forward(request, response);
 	}
 
