@@ -17,7 +17,13 @@ public abstract class CapoAbbigliamento {
 		return codArt;
 	}
 	
+	public String getDescrizione() {
+		return descrizione;
+	}
 	
+	public Taglia getTaglia() {
+		return taglia;
+	}
 
 	@Override
 	public String toString() {
